@@ -17,3 +17,6 @@ also created fetch all available rooms as per hotel id and the date range i.e. s
 
 create booking API is used to book the room in particular hotel it will have data like room id, consumer id ,
 start date and end date
+
+
+added dbScript.txt file in main folder which has script to create schema and all the related table in it
