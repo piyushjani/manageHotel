@@ -1,0 +1,60 @@
+{
+  "name": "booking",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "room_id": {
+      "type": "number",
+      "required": true
+    },
+    "consumer_id": {
+      "type": "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true
+    },
+    "status": {
+      "type": "boolean",
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "roomDetails": {
+      "type": "belongsTo",
+      "model": "room",
+      "foreignKey": "room_id",
+      "primaryKey": "id"
+    },
+    "consumerDetails": {
+      "type": "belongsTo",
+      "model": "consumer",
+      "foreignKey": "consumer_id",
+      "primaryKey": "id"
+    }
+
+    },
+  "acls": [],
+  "methods": {}
+}
