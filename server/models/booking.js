@@ -36,6 +36,9 @@ module.exports = function(Booking) {
   Booking.disableRemoteMethod("upsertWithWhere", true);
   Booking.disableRemoteMethod("replaceOrCreate", true);
   Booking.disableRemoteMethod("replaceById", true);
+  Booking.disableRemoteMethod('__get__consumerDetails', false)
+  Booking.disableRemoteMethod('__get__roomDetails', false)
+
 
   Booking.createBooking=function(data,cb){
 

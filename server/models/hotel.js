@@ -258,7 +258,7 @@ module.exports = function(Hotel) {
 Hotel.remoteMethod('deleteHotel',
 {
   description: 'Delete Hotel by  consumer id',
-  http: {path:'/' , verb: 'patch'},
+  http: {path:'/' , verb: 'delete'},
   accepts: [{arg: 'hotelId', type: 'number'}],
   returns: {arg: 'res',root: true, type: 'string',http: { source: 'res' }}
 

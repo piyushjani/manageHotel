@@ -35,6 +35,7 @@ module.exports = function(Room) {
   Room.disableRemoteMethod("upsertWithWhere", true);
   Room.disableRemoteMethod("replaceOrCreate", true);
   Room.disableRemoteMethod("replaceById", true);
+  Room.disableRemoteMethod('__get__hotelDetails', false)
 
 
   Room.createRoom=function(data,cb){

@@ -19,7 +19,6 @@ var validationHelper = require('../../server/application/validateUserData');
 module.exports = function(Consumer) {
 
 var app = require('../../server/server');
-//var consumerValidationHelper = require('../app/validateUserData')
 
   Consumer.disableRemoteMethod("create", true);
   Consumer.disableRemoteMethod("upsert", true);
@@ -28,7 +27,7 @@ var app = require('../../server/server');
   Consumer.disableRemoteMethod("find", true);
   Consumer.disableRemoteMethod("findById", true);
   Consumer.disableRemoteMethod("findOne", true);
-  //Consumer.disableRemoteMethod("deleteById", true);
+  Consumer.disableRemoteMethod("deleteById", true);
   Consumer.disableRemoteMethod("confirm", true);
   Consumer.disableRemoteMethod("count", true);
   Consumer.disableRemoteMethod("exists", true);
@@ -216,6 +215,7 @@ Consumer.updateConsumer=function(data,cb){
 };
 
 Consumer.remoteMethod('updateConsumer', {
+	description: 'Update Consumer',
 	accepts: {
 		arg:'data', type: 'object', http: {source: 'body'}
 	},
@@ -232,7 +232,6 @@ Consumer.remoteMethod('updateConsumer', {
 	var responseData = {};
 
 	Consumer.deleteConsumer = function(consumerId,cb) {
-    //console.log(vendorCode+voucherCode+'fdgfd');
     if(consumerId!=undefined  || consumerId!=null ) {
 	    var consumerId = consumerId;
 
@@ -249,9 +248,7 @@ Consumer.remoteMethod('updateConsumer', {
         				cb(null, err);
 	        		}	
 	        		if(data){
-        				// resp = response.jsonResponse(response.OK,"Voucher Deleted Successfully",voucher);
-          				// voucher.statusCode = 200;
-          				//cb(null,data);
+        				
 						responseData.data = data;
 						responseData.status = constants.OK;
 						responseData.message =  "success";
@@ -269,7 +266,6 @@ Consumer.remoteMethod('updateConsumer', {
         	}  
         });
     } else {
-    	//cb(app.buildError('Error', constants.Bad_Request, messages.voucherMsg.voucherUpdateFail, constants.Bad_Request));
 		responseData.data = null;
 		responseData.status = constants.OK;
 		responseData.message = "Please Enter valid Consumer ID";
@@ -282,7 +278,7 @@ Consumer.remoteMethod('updateConsumer', {
 Consumer.remoteMethod('deleteConsumer',
 {
 	description: 'Delete Consumer by  consumer id',
-	http: {path:'/' , verb: 'patch'},
+	http: {path:'/' , verb: 'delete'},
 	accepts: [{arg: 'consumerId', type: 'number'}],
 	returns: {arg: 'res',root: true, type: 'string',http: { source: 'res' }}
 
