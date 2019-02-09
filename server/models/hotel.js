@@ -24,7 +24,7 @@ module.exports = function(Hotel) {
   Hotel.disableRemoteMethod("upsert", true);
   Hotel.disableRemoteMethod("updateAll", true);
   Hotel.disableRemoteMethod("updateAttributes", false);
-  Hotel.disableRemoteMethod("find", true);
+  //Hotel.disableRemoteMethod("find", true);
   Hotel.disableRemoteMethod("findById", true);
   Hotel.disableRemoteMethod("findOne", true);
   Hotel.disableRemoteMethod("deleteById", true);

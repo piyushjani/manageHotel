@@ -24,7 +24,7 @@ var app = require('../../server/server');
   Consumer.disableRemoteMethod("upsert", true);
   Consumer.disableRemoteMethod("updateAll", true);
   Consumer.disableRemoteMethod("updateAttributes", false);
-  Consumer.disableRemoteMethod("find", true);
+  //Consumer.disableRemoteMethod("find", true);
   Consumer.disableRemoteMethod("findById", true);
   Consumer.disableRemoteMethod("findOne", true);
   Consumer.disableRemoteMethod("deleteById", true);

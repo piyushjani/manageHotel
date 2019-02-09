@@ -23,7 +23,7 @@ module.exports = function(Room) {
   Room.disableRemoteMethod("upsert", true);
   Room.disableRemoteMethod("updateAll", true);
   Room.disableRemoteMethod("updateAttributes", false);
-  Room.disableRemoteMethod("find", true);
+  //Room.disableRemoteMethod("find", true);
   Room.disableRemoteMethod("findById", true);
   Room.disableRemoteMethod("findOne", true);
   Room.disableRemoteMethod("deleteById", true);
